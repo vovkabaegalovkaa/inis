@@ -1,0 +1,55 @@
+body{
+    height: fit-content;
+    margin: 0   ;
+}
+.mega-container{
+    margin: auto;
+    width: 90%;
+}
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 1%;
+    gap: 3%;
+}
+.shirt-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.info{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.info-text{
+    height: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+button{
+    width: 20%;
+    border-radius: 5px;
+    border-style: solid;
+    transition: background-color 0.5s linear, color 0.5s linear;
+    color: rgb(135, 50, 168);
+    background-color: #F0F0F0;
+}
+button:hover{
+    background-color: rgb(135, 50, 168);
+    color: #F0F0F0;
+}
+.name{
+    font-size: large;
+    font-weight: bold;
+}
