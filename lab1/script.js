@@ -45,3 +45,29 @@ shirts.forEach((shirt, index) => {
     btnSee.innerHTML = "See page"
     buttons.appendChild(btnSee);
 });
+let megaContainer = document.querySelector(".mega-container");
+let quickViews = document.querySelectorAll(".view");
+megaContainer.addEventListener("click", (event) => {
+    for(let view of quickViews){
+        if(event.target == view){
+            openModal(view.getAttribute("id"));
+        }
+    }
+})
+function openModal(id){
+    let shirtName = shirts[id].name;
+    let shirtPrice = shirts[id].price;
+    let shirtFront = shirts[id].colors.white.front;
+    let shirtBack = shirts[id].colors.white.back;
+    document.querySelector(".shirt-name").innerHTML = shirtName;
+    document.querySelector(".shirt-price").innerHTML = shirtPrice;
+    document.querySelector("#front").setAttribute("src", shirtFront);
+    document.querySelector("#back").setAttribute("src", shirtBack);
+    let modal = document.querySelector(".modal");
+    modal.showModal();
+    modal.addEventListener("click", () => {
+        if(event.target == modal){
+            modal.close();
+        }
+    })
+}

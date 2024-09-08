@@ -25,11 +25,6 @@ body{
     flex-direction: column;
     text-align: left;
 }
-.info-text{
-    height: 40%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 .buttons{
     display: flex;
     flex-direction: row;
@@ -52,4 +47,61 @@ button:hover{
 .name{
     font-size: large;
     font-weight: bold;
+}
+.modal{
+    width: 50%;
+    height: fit-content;
+    border-radius: 5px;
+    font-weight: 400; 
+    text-align: center;
+    padding: 0;
+    border: 0;
+    display: block;
+    transform: scale(0.2);
+    opacity: 0;
+    transition: all 0.2s linear;
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+.modal-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    gap: 2%;
+    padding: 1%;
+}
+.photoes-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    gap: 1%;
+}
+.info-area{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+}
+.shirt-name{
+    font-weight: bold;
+}
+.modal[open]{
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+.modal::backdrop{
+    background-color: rgba(0,0,0, 0.7);
+}
+.photoe-dialog{
+    width: 50%;
+    height: auto;
 }
