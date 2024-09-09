@@ -47,10 +47,16 @@ shirts.forEach((shirt, index) => {
 });
 let megaContainer = document.querySelector(".mega-container");
 let quickViews = document.querySelectorAll(".view");
+let pages = document.querySelectorAll(".see-page");
 megaContainer.addEventListener("click", (event) => {
     for(let view of quickViews){
         if(event.target == view){
             openModal(view.getAttribute("id"));
+        }
+    }
+    for(let page of pages){
+        if(event.target == page ){
+            seePage(page.getAttribute("id"));
         }
     }
 })
@@ -70,4 +76,14 @@ function openModal(id){
             modal.close();
         }
     })
+}
+function seePage(id){
+    // localStorage.setItem("shirtName",shirts[id].name);
+    // localStorage.setItem("shirtDescription",shirts[id].description);
+    // localStorage.setItem("shirtPrice",shirts[id].price);
+    // let colors = shirts[id].colors;
+    // console.log(colors);
+    // localStorage.setItem("shirtColor",colors);
+    localStorage.setItem("shirtInfo", JSON.stringify(shirts[id]));
+    window.location.href = "../lab2/index.html";
 }
