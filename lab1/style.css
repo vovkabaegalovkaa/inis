@@ -69,22 +69,29 @@ button:hover{
     margin: auto;
 }
 .modal-area{
+    width: fit-content;
+    height: fit-content;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     justify-items: center;
-    gap: 2%;
-    padding: 1%;
+    padding: 2%;
+    gap: 0.5em;
 }
 .photoes-area{
     display: flex;
     flex-direction: row;
     justify-content: center;
     justify-items: center;
-    gap: 1%;
+    gap: 2%;
+}
+.photoes-area img{
+    width: 49%;
+    height: auto;
+    border-radius: 5px;
 }
 .info-area{
-    width: 10%;
+    font-size: 16pt;
     display: flex;
     flex-direction: column;
     justify-content: center;
