@@ -84,19 +84,15 @@ workSpace.addEventListener("touchmove", (event) => {
         }
         holderItem.style.left = `${event.touches[0].clientX - offsetX}px`;
         holderItem.style.top = `${event.touches[0].clientY - offsetY}px`;
+        if (isDragging && event.touches.length > 1) {
+            isDragging = false;
+            holderItem = null;
+        }
     }
 });
 
 workSpace.addEventListener("touchstart", (event) => {
     event.preventDefault();
-
-    // Если есть больше одного касания, завершить перетаскивание
-    if (isDragging && event.touches.length > 1) {
-        isDragging = false;
-        holderItem = null;
-    }
-
-    lastTap = new Date().getTime();
 });
 
 workSpace.addEventListener('click', () => {
@@ -106,7 +102,7 @@ workSpace.addEventListener('click', () => {
 });
 
 document.addEventListener('keydown', (event) => {
-    if (holderItem && event.keyCode == 27) { // Код клавиши Esc
+    if (holderItem && event.keyCode == 27) { 
         isDragging = false;
         holderItem.style.left = `${startCoords.x}px`;
         holderItem.style.top = `${startCoords.y}px`;
