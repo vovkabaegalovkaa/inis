@@ -88,7 +88,7 @@ workSpace.addEventListener("touchmove", () => {
 })
 workSpace.addEventListener("touchstart", () => {
     event.preventDefault();
-    if(event.target = workSpace){
+    if(event.target == workSpace){
         if(holderItem && isDragging){
             isDragging = false;
             holderItem = null;
