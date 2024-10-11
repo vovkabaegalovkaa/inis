@@ -90,6 +90,7 @@ workSpace.addEventListener("touchstart", () => {
     event.preventDefault();
     if(holderItem && isDragging){
         isDragging = false;
+        holderItem = null;
     }
 })
 workSpace.addEventListener('click', () => {
